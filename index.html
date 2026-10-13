@@ -3,87 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0f1115">
-<title>Verifica CUSA PS4 — ¿Qué idiomas trae?</title>
-<meta name="description" content="Consulta por CUSA qué idiomas trae cada juego PS4 según dlpsgame. Voces y textos exactos.">
+<meta name="theme-color" content="#ffffff">
+<title>CUSA PS4 — Consulta de idiomas</title>
+<meta name="description" content="Consulta por CUSA o nombre qué idiomas trae cada juego PS4 según dlpsgame.">
 <style>
-:root{--bg:#0f1115;--card:#1a1e26;--line:#2a3040;--txt:#e8eaf0;--mut:#9aa3b5;--acc:#4cc38a;--warn:#ffb020;--bad:#ff5d5d;--es:#3aa0ff}
-*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;background:var(--bg);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,sans-serif}
-.wrap{max-width:920px;margin:0 auto;padding:20px 16px 60px}
-h1{font-size:1.6rem;margin:18px 0 4px}h1 span{color:var(--acc)}
-.sub{color:var(--mut);font-size:.95rem;margin:0 0 18px}
-.search{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;position:sticky;top:8px;z-index:5}
-.row{display:flex;gap:10px;flex-wrap:wrap}
-input[type=text]{flex:1;min-width:220px;background:#0c0e12;border:1px solid var(--line);color:var(--txt);border-radius:10px;padding:13px 14px;font-size:16px;letter-spacing:.5px}
-input:focus{outline:2px solid var(--acc);border-color:var(--acc)}
-button{background:var(--acc);border:0;color:#06281a;font-weight:700;border-radius:10px;padding:13px 20px;font-size:1rem;cursor:pointer;min-height:48px}
-button.ghost{background:transparent;color:var(--mut);border:1px solid var(--line)}
-.cover{width:100%;max-width:300px;height:auto;border-radius:12px;border:1px solid var(--line);display:block;background:#0c0e12}
-.head{display:flex;gap:12px;align-items:flex-start}
-.head img{width:96px;height:120px;object-fit:cover;border-radius:10px;border:1px solid var(--line);flex:none;background:#0c0e12}
-.head .tt{min-width:0}
-@media(max-width:640px){
-  .wrap{padding:14px 10px 48px}
-  h1{font-size:1.3rem}
-  .search{padding:12px;top:6px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:#f4f5f7;color:#1a1d21;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,sans-serif;line-height:1.5}
+.top{border-bottom:1px solid #e3e6ea;background:#fff}
+.top .in{max-width:760px;margin:0 auto;padding:18px 16px 14px}
+h1{font-size:1.25rem;margin:0;font-weight:650;letter-spacing:-.2px}
+h1 small{font-weight:500;color:#6b7280}
+.sub{margin:4px 0 0;color:#6b7280;font-size:.9rem}
+.wrap{max-width:760px;margin:0 auto;padding:14px 12px 48px}
+.search{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:12px;box-shadow:0 1px 2px rgba(16,24,40,.05)}
+.row{display:flex;gap:8px}
+input[type=text]{flex:1;min-width:0;border:1px solid #d4d9e0;border-radius:9px;padding:12px;font-size:16px;background:#fff;color:#111}
+input:focus{outline:2px solid #2563eb33;border-color:#2563eb}
+button{border:1px solid transparent;border-radius:9px;padding:12px 16px;font-size:.95rem;font-weight:600;cursor:pointer;background:#111827;color:#fff;min-height:48px}
+button:active{transform:translateY(1px)}
+button.ghost{background:#fff;color:#374151;border-color:#d4d9e0}
+.status{font-size:.82rem;color:#6b7280;min-height:1.2em;margin:8px 2px 0}
+.hint{font-size:.8rem;color:#6b7280;margin:6px 2px 0}
+.hint code{background:#f1f2f4;border:1px solid #e3e6ea;border-radius:6px;padding:0 5px;font-size:.78rem}
+.meta-line{font-size:.8rem;color:#6b7280;margin:12px 2px}
+#out{display:grid;gap:10px;margin-top:10px}
+.card{background:#fff;border:1px solid #e3e6ea;border-radius:12px;padding:14px}
+.card h2{margin:0;font-size:1.02rem;line-height:1.35}
+.result{display:flex;gap:12px}
+.result img{width:76px;height:96px;object-fit:cover;border-radius:8px;border:1px solid #e3e6ea;background:#eef0f3;flex:none}
+.result .tt{min-width:0;flex:1}
+.cusa{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8rem;background:#f1f2f4;border:1px solid #e3e6ea;border-radius:6px;padding:1px 7px;display:inline-block;margin-top:6px}
+.tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.75rem;font-weight:600;border-radius:999px;padding:2px 10px;border:1px solid #e3e6ea;background:#f8fafc;color:#374151}
+.tag.ok-voz{background:#ecfdf5;border-color:#a7f3d0;color:#065f46}
+.tag.ok-txt{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+.tag.no{background:#fef2f2;border-color:#fecaca;color:#991b1b}
+.tag.reg{background:#f5f3ff;border-color:#ddd6fe;color:#5b21b6}
+.lang{margin-top:10px;border-top:1px solid #eef0f3;padding-top:10px}
+.lang h3{margin:0 0 2px;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#9ca3af;font-weight:700}
+.lang p{margin:0;font-size:.92rem}
+.mut{color:#6b7280;font-size:.82rem}
+details{margin-top:10px;border-top:1px solid #eef0f3;padding-top:8px}
+summary{cursor:pointer;color:#374151;font-size:.83rem}
+pre.exact{white-space:pre-wrap;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.75rem;background:#f8fafc;border:1px solid #eef0f3;border-radius:8px;padding:8px;overflow-wrap:anywhere;margin:8px 0 0}
+a{color:#1d4ed8}
+.list-row{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.list-row .nm{min-width:0}
+.list-row .nm b{display:block;font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.list-row .nm span{font-size:.75rem;color:#6b7280;word-break:break-all}
+.btn-sm{padding:10px 14px;min-height:44px;font-size:.88rem;white-space:nowrap}
+footer{margin-top:18px;color:#9ca3af;font-size:.78rem;text-align:center}
+@media(max-width:560px){
+  .top .in{padding:14px 12px 10px}
+  h1{font-size:1.1rem}
+  .wrap{padding:10px 8px 40px}
   .row{flex-direction:column}
-  input[type=text]{width:100%;min-width:0}
   button{width:100%}
-  .head img{width:84px;height:105px}
-  .card{padding:12px}
-  .exact{font-size:.75rem;overflow-wrap:anywhere}
+  .result img{width:64px;height:82px}
 }
-.hint{color:var(--mut);font-size:.85rem;margin-top:10px}
-.hint code{background:#0c0e12;padding:2px 6px;border-radius:6px;border:1px solid var(--line);color:var(--txt)}
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
-.pill{background:#0c0e12;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.85rem;color:var(--mut)}
-.pill b{color:var(--txt)}
-#out{margin-top:16px;display:grid;gap:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 15px}
-.card h2{margin:0 0 2px;font-size:1.15rem}
-.card .meta{color:var(--mut);font-size:.85rem;margin-bottom:10px}
-.grid{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}
-.box{background:#0c0e12;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.box h3{margin:0 0 6px;font-size:.8rem;letter-spacing:.6px;text-transform:uppercase;color:var(--mut)}
-.box p{margin:0;font-size:.95rem;line-height:1.5}
-.badge{display:inline-block;border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:700;margin:2px 4px 2px 0;border:1px solid var(--line)}
-.b-es-voz{background:#0e2a1a;color:#7be3ab;border-color:#1e5c3a}
-.b-es-txt{background:#0e2233;color:#8ecbff;border-color:#245a8a}
-.b-no{background:#2a1515;color:#ff9a9a;border-color:#5c2626}
-.b-region{background:#242033;color:#cbb8ff;border-color:#4a3f7a}
-.b-cusa{background:#12233a;color:#9fd0ff;border-color:#274a73;font-family:ui-monospace,Consolas,monospace}
-a{color:#7be3ab;word-break:break-all}
-.small{font-size:.82rem;color:var(--mut)}
-.exact{font-family:ui-monospace,Consolas,monospace;font-size:.82rem;background:#0c0e12;border:1px dashed var(--line);border-radius:8px;padding:8px;white-space:pre-wrap;margin-top:8px}
-footer{margin-top:26px;color:var(--mut);font-size:.82rem;border-top:1px solid var(--line);padding-top:12px}
-kbd{background:#0c0e12;border:1px solid var(--line);border-bottom-width:2px;border-radius:6px;padding:1px 7px;font-family:inherit}
 </style>
 </head>
 <body>
-<div class="wrap">
-<h1>Verifica <span>CUSA</span> PS4</h1>
-<p class="sub">Base sencilla: lista + enlace. Al entrar en el juego carga su ficha de dlpsgame, filtra la sección CUSA y tira nombre + idiomas. Para CUSA directo usa En vivo.</p>
-
+<header class="top"><div class="in">
+<h1>CUSA · PS4 <small>consulta de idiomas</small></h1>
+<p class="sub">Escribe un CUSA o el nombre del juego. Carga la ficha y muestra portada, voces y textos.</p>
+</div></header>
+<main class="wrap">
 <div class="search">
 <div class="row">
-<input id="q" type="text" placeholder="Ej: CUSA43772 · 43772 · nombre del juego" autocomplete="off" spellcheck="false">
-<button id="go">Consultar en vivo</button>
+<input id="q" type="text" placeholder="CUSA43772 · 43772 · Mortuary" autocomplete="off" spellcheck="false" enterkeyhint="search">
+<button id="go">Consultar</button>
 <button id="clear" class="ghost">Limpiar</button>
 </div>
-<div class="small" id="liveStatus" style="margin-top:8px"></div>
-<div class="hint">Solo en vivo: <code>CUSA43772</code>, <code>43772</code> o nombre como <code>mortuary</code>. Pulsa <kbd>Enter</kbd>.</div>
+<div class="status" id="liveStatus"></div>
+<div class="hint">En vivo desde dlpsgame. Pulsa Enter para buscar.</div>
 </div>
-
-<div class="stats" id="stats"></div>
+<div class="meta-line" id="stats"></div>
 <div id="out"></div>
-
-<footer>
-<div id="foot">Cargando base…</div>
-<div class="small">Fuente: fichas de dlpsgame.com (Voice/Audio + Screen/Subtitles decodificados tal cual). Si un bloque sale “NO ENCONTRADO”, hay que revisarlo manual en la ficha original. Este sitio no aloja juegos, solo recompila CUSA + idiomas.</div>
-</footer>
-</div>
-
+<footer><div id="foot">Cargando lista…</div></footer>
+</main>
 <script>
 let ROWS = [];
 let BY_CUSA = new Map();
@@ -91,116 +89,81 @@ let JUEGOS = [];
 
 function normCusa(s){
   if(!s) return "";
-  s = s.toUpperCase().trim();
-  s = s.replace(/[\s\-_]/g,"");
-  // si son solo 5 dígitos -> CUSAxxxxx
+  s = s.toUpperCase().trim().replace(/[\s\-_]/g,"");
   if(/^\d{5}$/.test(s)) return "CUSA"+s;
-  // si ya trae prefijo válido (CUSA, PLAS, PCAS, PLJM, PCJS, PPSA)
   let m = s.match(/(CUSA|PLAS|PCAS|PLJM|PCJS|PPSA|PPAS)\D*(\d{5})/);
   if(m) return m[1]+m[2];
   return s;
 }
-
 function esc(s){return (s??"").toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-
-function badgeES(r){
-  if(r.es_en_voz) return '<span class="badge b-es-voz">ES doblaje</span>';
-  if(r.es_en_textos) return '<span class="badge b-es-txt">ES textos</span>';
-  if(r.es_any) return '<span class="badge b-es-txt">ES (revisar)</span>';
-  return '<span class="badge b-no">Sin español</span>';
+function tagES(r){
+  if(r.es_en_voz) return '<span class="tag ok-voz">Español · doblaje</span>';
+  if(r.es_en_textos) return '<span class="tag ok-txt">Español · textos</span>';
+  if(r.es_any) return '<span class="tag ok-txt">Español · revisar</span>';
+  return '<span class="tag no">Sin español</span>';
 }
-
 function renderStats(){
-  const cusas = BY_CUSA.size;
-  document.getElementById("stats").innerHTML =
-    '<span class="pill">Juegos en lista: <b>'+JUEGOS.length+'</b></span>'+
-    '<span class="pill">CUSAs en caché: <b>'+cusas+'</b></span>'+
-    '<span class="pill">Bloques en caché: <b>'+ROWS.length+'</b></span>';
+  document.getElementById("stats").textContent = JUEGOS.length ? JUEGOS.length+" juegos en lista" + (BY_CUSA.size ? " · "+BY_CUSA.size+" CUSA en caché" : "") : "";
 }
-
 function groupByCusa(rows){
   const m = new Map();
-  rows.forEach(r=>{
-    const k = r.cusa || "(sin CUSA)";
-    if(!m.has(k)) m.set(k,[]);
-    m.get(k).push(r);
-  });
+  rows.forEach(r=>{ const k=r.cusa||"(sin CUSA)"; if(!m.has(k)) m.set(k,[]); m.get(k).push(r); });
   return m;
 }
-
 function renderResults(list, query){
   const out = document.getElementById("out");
   if(!list.length){
     const nc = normCusa(query||"");
-    const isCusa = /^CUSA|^PLAS|^PCAS|^PLJM|^PCJS|^PPSA/i.test(nc);
-    const live = "https://dlpsgame.com/?s=" + encodeURIComponent(isCusa?nc:query);
-    out.innerHTML = '<div class="card"><h2>Sin resultados para “'+esc(query)+'” en la base local</h2>'
-      +'<p class="small">Ese CUSA aún no está recompilado (son 6.494 fichas). Prueba la consulta en vivo, filtra por la palabra CUSA y decodifica Voice/Audio + Screen/Subtitles al momento:</p>'
-      +'<p><button onclick="buscarEnVivo()">Probar en vivo '+esc(isCusa?nc:query)+'</button> '
-      +'<a href="'+esc(live)+'" target="_blank" rel="noopener" class="small">abrir dlpsgame ?s= en pestaña</a></p>'
-      +'<p class="small">En local exacto:<br><code>py verify_cusa.py --search '+esc(isCusa?nc:query)+' --out data</code></p></div>';
+    out.innerHTML = '<div class="card"><h2>Sin resultados para “'+esc(query)+'”</h2>'
+      +'<p class="mut">Prueba con el CUSA completo (CUSA43772) o con una palabra del título. En local: <code>py verify_cusa.py --search '+esc(nc||query)+'</code></p></div>';
     return;
   }
   const g = groupByCusa(list);
   let html = "";
   for(const [cusa, arr] of g){
-    const primero = arr[0];
-    const vocesU = [...new Set(arr.map(a=>a.voice).filter(Boolean))];
-    const txtU = [...new Set(arr.map(a=>a.screen_languages).filter(Boolean))];
-    const resumenes = [...new Set(arr.map(a=>a.es_resumen).filter(Boolean))];
-    const urls = [...new Set(arr.map(a=>a.url))];
-    const juegos = [...new Set(arr.map(a=>a.juego))];
-    const cover = (arr.map(a=>a.cover).find(Boolean))||"";
-    html += '<div class="card">';
-    html += '<div class="head">';
-    if(cover) html += '<img src="'+esc(cover)+'" alt="portada" loading="lazy" referrerpolicy="no-referrer">';
-    html += '<div class="tt"><h2>'+esc(cusa)+' <span class="badge b-cusa">'+esc(cusa)+'</span> <span class="badge b-region">'+esc(primero.region||"?")+'</span></h2>';
-    html += '<div class="meta">'+esc(juegos.join(" · "))+' — '+arr.length+' bloque(s) · '+esc(resumenes.join(" / "))+'</div></div></div>';
-    html += '<div>'+arr.map(badgeES).join("")+'</div>';
-    html += '<div class="grid" style="margin-top:10px">';
-    html += '<div class="box"><h3>Voice / Audio (doblaje)</h3><p>'+(vocesU.length?esc(vocesU.join("  ||  ")):"<span class='small'>[NO ENCONTRADO en dlpsgame — revisar ficha]</span>")+'</p></div>';
-    html += '<div class="box"><h3>Screen / Subtitles (textos)</h3><p>'+(txtU.length?esc(txtU.join("  ||  ")):"<span class='small'>[NO ENCONTRADO — revisar ficha]</span>")+'</p></div>';
-    html += '</div>';
-    // detalle exacto por bloque
-    html += '<details style="margin-top:10px"><summary class="small">Ver detalle exacto por bloque ('+arr.length+') + enlaces</summary>';
+    const p = arr[0];
+    const voces=[...new Set(arr.map(a=>a.voice).filter(Boolean))];
+    const txts=[...new Set(arr.map(a=>a.screen_languages).filter(Boolean))];
+    const juegos=[...new Set(arr.map(a=>a.juego).filter(Boolean))];
+    const urls=[...new Set(arr.map(a=>a.url).filter(Boolean))];
+    const cover=(arr.map(a=>a.cover).find(Boolean))||"";
+    html += '<article class="card"><div class="result">';
+    if(cover) html += '<img src="'+esc(cover)+'" alt="" loading="lazy" referrerpolicy="no-referrer">';
+    html += '<div class="tt"><h2>'+esc(juegos[0]||cusa)+'</h2>'
+      +'<span class="cusa">'+esc(cusa)+' · '+esc(p.region||"?")+'</span>'
+      +'<div class="tags">'+tagES(p)+'<span class="tag reg">'+esc(p.region||"?")+'</span></div>'
+      +'</div></div>'
+      +'<div class="lang"><h3>Voces</h3><p>'+(voces.length?esc(voces.join(" · ")):'<span class="mut">No indicado — revisar ficha</span>')+'</p></div>'
+      +'<div class="lang"><h3>Textos</h3><p>'+(txts.length?esc(txts.join(" · ")):'<span class="mut">No indicado — revisar ficha</span>')+'</p></div>'
+      +'<details><summary>Detalle por bloque ('+arr.length+')</summary>';
     arr.forEach((r,i)=>{
-      html += '<div class="exact">Bloque '+(r.bloque||(i+1))+' · '+esc(r.cusa)+' – '+esc(r.region)+' '+esc(r.uploader||"")+'\nVoice: '+esc(r.voice||"[NO ENCONTRADO]")+'\nScreen: '+esc(r.screen_languages||"[NO ENCONTRADO]")+'\nES: '+esc(r.es_resumen||"")+'\n'+esc(r.juego)+'\n'+esc(r.url)+'</div>';
+      html += '<pre class="exact">'+esc(r.cusa)+' – '+esc(r.region)+' '+esc(r.uploader||"")+'\nVoz: '+esc(r.voice||"—")+'\nTexto: '+esc(r.screen_languages||"—")+'\n'+esc(r.es_resumen||"")+'</pre>';
     });
-    html += '<div class="small" style="margin-top:8px">Fichas: '+urls.map(u=>'<a href="'+esc(u)+'" target="_blank" rel="noopener">'+esc(u)+'</a>').join("<br>")+'</div>';
-    html += '</details>';
-    html += '</div>';
+    html += '<p class="mut">Fuente: '+urls.map(u=>'<a href="'+esc(u)+'" target="_blank" rel="noopener">ficha</a>').join(" · ")+'</p></details></article>';
   }
   out.innerHTML = html;
 }
-
 function buscar(){
-  const raw = document.getElementById("q").value;
-  const q = raw.trim();
+  const q = document.getElementById("q").value.trim();
   if(!q) return;
   const nc = normCusa(q);
-  const isCusa = /^CUSA|^PLAS|^PCAS|^PLJM|^PCJS|^PPSA/i.test(nc) || /^\d{5}$/.test(q.trim());
-  // Consultar = solo en vivo (funciona bien)
+  const isCusa = /^CUSA|^PLAS|^PCAS|^PLJM|^PCJS|^PPSA/i.test(nc) || /^\d{5}$/.test(q);
   if(isCusa){ buscarEnVivo(); return; }
-  // Por nombre: lista sencilla + Ver idiomas (también en vivo por ficha)
   const low = q.toLowerCase();
   const hits = JUEGOS.filter(j=>(j.juego||"").toLowerCase().includes(low)).slice(0,30);
   renderGameList(hits, q);
-  if(location.protocol.startsWith("http")) history.replaceState(null,"","#"+encodeURIComponent(q));
+  try{ history.replaceState(null,"","#"+encodeURIComponent(q)); }catch(e){}
 }
-
 function renderGameList(hits, q){
   const out = document.getElementById("out");
   if(!hits.length){ renderResults([], q); return; }
-  let html = '<div class="card"><h2>'+hits.length+' juegos para “'+esc(q)+'”</h2><p class="small">Base sencilla (lista + enlace). Pulsa <b>Ver idiomas</b>: carga su ficha de dlpsgame, filtra la sección CUSA y tira nombre + idiomas en vivo.</p></div>';
-  hits.forEach((h,i)=>{
-    html += '<div class="card"><h2 style="font-size:1rem">'+esc(h.juego)+'</h2>'
-      +'<div class="meta">'+esc(h.url)+'</div>'
-      +'<div class="row"><button onclick="verJuego(\''+esc(h.url).replace(/'/g,"%27")+'\')">Ver idiomas</button>'
-      +'<a class="small" href="'+esc(h.url)+'" target="_blank" rel="noopener" style="align-self:center">abrir ficha</a></div></div>';
+  let html = '<div class="card"><h2>'+hits.length+' resultados</h2><p class="mut">Toca Ver para cargar idiomas en vivo.</p></div>';
+  hits.forEach(h=>{
+    html += '<div class="card"><div class="list-row"><div class="nm"><b>'+esc(h.juego)+'</b><span>'+esc(h.url)+'</span></div>'
+      +'<button class="btn-sm" onclick="verJuego(\''+esc(h.url).replace(/'/g,"%27")+'\')">Ver</button></div></div>';
   });
   out.innerHTML = html;
 }
-
 async function verJuego(url){
   const st = document.getElementById("liveStatus"), out = document.getElementById("out");
   try{
@@ -208,26 +171,25 @@ async function verJuego(url){
     const html = await fetchTextLive(url);
     const parsed = parseGameLive(html, url, null);
     if(!parsed.bloques.length){
-      out.innerHTML = '<div class="card"><h2>'+esc(parsed.title)+'</h2><p class="small">La ficha no trae sección CUSA detectable. <a href="'+esc(url)+'" target="_blank" rel="noopener">Abrir original</a></p></div>';
+      out.innerHTML = '<div class="card"><h2>'+esc(parsed.title)+'</h2><p class="mut">Sin sección CUSA. <a href="'+esc(url)+'" target="_blank" rel="noopener">Abrir original</a></p></div>';
       if(st) st.textContent = "";
       return;
     }
-    if(st) st.textContent = "Ficha en vivo: "+parsed.title+" · "+parsed.bloques.length+" bloque(s) CUSA";
-    renderResults(parsed.bloques, parsed.title+" (ficha en vivo)");
-    if(st) setTimeout(()=>{st.textContent="";},4000);
+    if(st) st.textContent = parsed.title+" · "+parsed.bloques.length+" bloque(s)";
+    renderResults(parsed.bloques, parsed.title);
+    setTimeout(()=>{ if(st) st.textContent=""; },4000);
   }catch(e){
-    if(st) st.textContent = "No se pudo cargar la ficha ("+e.message+").";
-    out.innerHTML = '<div class="card"><h2>No se pudo cargar</h2><p class="small">'+esc(e.message)+' — <a href="'+esc(url)+'" target="_blank" rel="noopener">abrir ficha original</a></p></div>';
+    if(st) st.textContent = "No se pudo cargar ("+e.message+")";
+    out.innerHTML = '<div class="card"><h2>No se pudo cargar</h2><p class="mut">'+esc(e.message)+' — <a href="'+esc(url)+'" target="_blank" rel="noopener">abrir original</a></p></div>';
   }
 }
 
-/* ===== Consulta en vivo al sitio (sin bajar los miles) ===== */
+/* ===== En vivo ===== */
 const SKIP_HREF = ["/category/","list-all","list-game","/daily-update","/guide-","/dmca","/contact"];
 const REGIONES = new Set(["EUR","USA","US","EU","PAL","NTSC","ASIA","AS","JPN","JP","JAP","KOR","KOREA","CHN","CHINA","HK","HKG","TW","TWN","UK","UE","EUROPA","AMERICA","LATAM"]);
 const VOICE_L = ["voice","voices","voise","voises","voi","vois","void","voids","audio","audios","dub","dubs","dubbed","doblaje","doblado","voz","voces","vocal","sound","speech"];
 const SCREEN_L = ["screen languages","screen language","screen","subtitles","subtitle","subs","sub","texts","text","text languages","written","languages","language","lenguages","lenguage","idiomas","idioma","langue","langues","menus","interface"];
 const ALL_L_RE = new RegExp("\\b("+[...VOICE_L,...SCREEN_L].sort((a,b)=>b.length-a.length).join("|")+")\\s*[:\uFF1A]\\s*","gi");
-
 function workerBase(){
   try{
     const p = new URLSearchParams(location.search).get("worker");
@@ -242,18 +204,18 @@ async function fetchTextLive(target){
   if(wb) tries.push(wb.replace(/\/$/,"")+"?url="+encodeURIComponent(target));
   tries.push("https://api.allorigins.win/raw?url="+encodeURIComponent(target));
   tries.push("https://corsproxy.io/?url="+encodeURIComponent(target));
-  let lastErr = null;
+  let err=null;
   for(const u of tries){
     try{
-      if(st) st.textContent = "Consultando en vivo… ("+(u.includes("allorigins")?"proxy1":u.includes("corsproxy")?"proxy2":"worker")+")";
+      if(st) st.textContent = "Consultando…";
       const r = await fetch(u);
       if(!r.ok) throw new Error("HTTP "+r.status);
       const t = await r.text();
       if(t && t.length>2000) return t;
-      throw new Error("respuesta vacía");
-    }catch(e){lastErr=e;}
+      throw new Error("vacía");
+    }catch(e){err=e;}
   }
-  throw lastErr||new Error("bloqueo CORS/proxy");
+  throw err||new Error("proxy");
 }
 function b64ToText(b64){
   b64=(""+b64).trim().replace(/\s+/g,"");
@@ -266,19 +228,14 @@ function b64ToText(b64){
 function cleanVal(v){
   v=(""+v).replace(/\s+/g," ").trim().replace(/^[,;|\-–—\s]+|[,;|\-–—\s]+$/g,"");
   v=v.split(/\(?\s*Guide Download/i)[0].split(/\(?\s*Tool Download/i)[0].split(/\bPassword\s*:/i)[0].split(/\bPasword\s*:/i)[0].split(/\bTnx to\b/i)[0];
-  const parts=String(v).split(",").map(s=>s.trim()).filter(s=>{
+  return v.split(",").map(s=>s.trim()).filter(s=>{
     const p=s.replace(/^[.\s;|()[\]]+|[.\s;|()[\]]+$/g,"");
     if(p.length<2) return false;
     if(/^(vv?|xx?|oo?)$/i.test(p)) return false;
     return true;
-  });
-  return parts.join(", ").trim();
+  }).join(", ").trim();
 }
-function labelKind(l){
-  l=(""+l).toLowerCase().replace(/\s+/g," ").trim();
-  if(VOICE_L.includes(l)) return "voice";
-  return "screen";
-}
+function labelKind(l){ l=(""+l).toLowerCase().replace(/\s+/g," ").trim(); return VOICE_L.includes(l)?"voice":"screen"; }
 function extractLive(decodedHtml){
   const doc=new DOMParser().parseFromString(decodedHtml,"text/html");
   doc.querySelectorAll("br").forEach(br=>br.replaceWith(doc.createTextNode("\n")));
@@ -291,32 +248,27 @@ function extractLive(decodedHtml){
     const label=ms[i][1];
     const s=ms[i].index+ms[i][0].length;
     const e=(i+1<ms.length)?ms[i+1].index:plain.length;
-    let val=plain.slice(s,e).split("\n")[0]||"";
-    val=cleanVal(val);
+    let val=cleanVal(plain.slice(s,e).split("\n")[0]||"");
     if(!val||val.length<2) continue;
     if(/^(dlpsgame|downloadgameps3|guide|tool|multi)$/i.test(val)) continue;
     (labelKind(label)==="voice"?voice:screen).push(val);
   }
-  const uniq=a=>[...new Set(a)];
-  return {voice:uniq(voice).join(", "),screen:uniq(screen).join(", ")};
+  return {voice:[...new Set(voice)].join(", "),screen:[...new Set(screen)].join(", ")};
 }
 function esFlagsLive(voice,screen){
   const low=((voice||"")+"\n"+(screen||"")).toLowerCase();
   const vl=(voice||"").toLowerCase(), sl=(screen||"").toLowerCase();
-  const has=(...ts)=>ts.some(t=>low.includes(t.toLowerCase()));
   const T=["spanish","español","espanol","españa","espana","castellano"];
   const any=T.some(t=>low.includes(t));
-  const spain=has("spanish (spain)","spain","españa","espana","castellano","es (es)","es-es");
-  const mex=has("spanish (mexico)","mexico","méxico","latam","latin","latino","es (mx)","es-mx","latin american spanish");
   const inV=T.some(t=>vl.includes(t)), inS=T.some(t=>sl.includes(t));
-  let resumen="Sin español";
-  if(inV&&(vl.includes("spain")||vl.includes("españa")||vl.includes("espana"))) resumen="ES doblaje España";
-  else if(inV&&(vl.includes("mexico")||vl.includes("méxico")||vl.includes("latin"))) resumen="ES doblaje Mexicano/Latino";
-  else if(inV) resumen="ES doblaje (variante sin especificar)";
-  else if(inS&&(sl.includes("spain")||sl.includes("españa")||sl.includes("espana"))) resumen="ES solo textos España";
-  else if(inS&&(sl.includes("mexico")||sl.includes("méxico"))) resumen="ES solo textos México";
-  else if(inS) resumen="ES solo textos (variante sin especificar)";
-  return {es_any:any,es_spain:spain,es_mexico:mex,es_en_voz:inV,es_en_textos:inS,es_resumen:resumen};
+  let r="Sin español";
+  if(inV&&(vl.includes("spain")||vl.includes("españa")||vl.includes("espana"))) r="ES doblaje España";
+  else if(inV&&(vl.includes("mexico")||vl.includes("méxico")||vl.includes("latin"))) r="ES doblaje Mexicano/Latino";
+  else if(inV) r="ES doblaje";
+  else if(inS&&(sl.includes("spain")||sl.includes("españa")||sl.includes("espana"))) r="ES textos España";
+  else if(inS&&(sl.includes("mexico")||sl.includes("méxico"))) r="ES textos México";
+  else if(inS) r="ES textos";
+  return {es_any:any,es_spain:low.includes("spain")||low.includes("españa"),es_mexico:low.includes("mexico")||low.includes("latin"),es_en_voz:inV,es_en_textos:inS,es_resumen:r};
 }
 function parseHeadersLive(root){
   const hs=[];
@@ -329,26 +281,24 @@ function parseHeadersLive(root){
     const cusa=m[1].replace(/[\s\-]/g,"").toUpperCase();
     const region=(m[2]||"").toUpperCase();
     if(region&&!REGIONES.has(region)) return;
-    const rest=(m[3]||"").slice(0,200);
-    if(!region&&rest&& (rest.split(/\s+/).length>6 || /^(Works|Please|can you|Do I|This is|Este es)/i.test(rest))) return;
+    const rest=(m[3]||"").slice(0,120);
+    if(!region&&rest&&(rest.split(/\s+/).length>6||/^(Works|Please|can you|Do I|This is|Este es)/i.test(rest))) return;
     hs.push({header_text:txt,cusa,region,uploader:rest});
   });
   return hs;
 }
-function innerCusaLive(decodedHtml){
-  const t=new DOMParser().parseFromString(decodedHtml,"text/html").body.textContent||"";
+function innerCusaLive(d){
+  const t=new DOMParser().parseFromString(d,"text/html").body.textContent||"";
   const m=t.match(/\b((?:CUSA|PLAS|PCAS|PLJM|PCJS|PPSA|PPAS)\s*-?\s*\d{5})\s*[–\-—]?\s*([A-Za-z]{2,4})?/i);
   if(!m) return ["",""];
-  const c=m[1].replace(/[\s\-]/g,"").toUpperCase();
   let r=(m[2]||"").toUpperCase();
   if(r&&!REGIONES.has(r)) r="";
-  return [c,r];
+  return [m[1].replace(/[\s\-]/g,"").toUpperCase(),r];
 }
 function parseGameLive(html,url,wanted){
   const doc=new DOMParser().parseFromString(html,"text/html");
   const h1=doc.querySelector("h1");
   const title=h1?h1.textContent.trim():url;
-  // Portada: og:image primero, si no primera imagen de la ficha
   let cover="";
   const og=doc.querySelector('meta[property="og:image"]');
   if(og&&og.getAttribute("content")) cover=og.getAttribute("content");
@@ -360,30 +310,27 @@ function parseGameLive(html,url,wanted){
   try{ if(cover&&cover.startsWith("//")) cover="https:"+cover; }catch(e){}
   const post=doc.querySelector("div.post-body, div.entry-content")||doc;
   const headers=parseHeadersLive(post);
-  const divs=[...doc.querySelectorAll("div.secure-data[data-payload]")];
   const bloques=[];
-  divs.forEach((d,i)=>{
+  [...doc.querySelectorAll("div.secure-data[data-payload]")].forEach((d,i)=>{
     let dec=""; try{dec=b64ToText(d.getAttribute("data-payload")||"");}catch(e){}
     const vs=dec?extractLive(dec):{voice:"",screen:""};
-    const [ic,ir]=dec?innerCusaLive(dec):["",""];
+    const ic=dec?innerCusaLive(dec):["",""];
     const o=headers[i]||{header_text:"",cusa:"",region:"",uploader:""};
-    const cusa=o.cusa||ic, region=o.region||ir;
     const fl=esFlagsLive(vs.voice,vs.screen);
-    bloques.push({juego:title,url,bloque:i+1,cusa,region,uploader:o.uploader||"",voice:vs.voice,screen_languages:vs.screen,cover,es_resumen:fl.es_resumen,es_any:fl.es_any,es_spain:fl.es_spain,es_mexico:fl.es_mexico,es_en_voz:fl.es_en_voz,es_en_textos:fl.es_en_textos,decoded_ok:!!(vs.voice||vs.screen),en_vivo:true});
+    bloques.push({juego:title,url,bloque:i+1,cusa:o.cusa||ic[0],region:o.region||ic[1],uploader:o.uploader||"",voice:vs.voice,screen_languages:vs.screen,cover,es_resumen:fl.es_resumen,es_any:fl.es_any,es_spain:fl.es_spain,es_mexico:fl.es_mexico,es_en_voz:fl.es_en_voz,es_en_textos:fl.es_en_textos});
   });
-  let filtrados=wanted?bloques.filter(b=>b.cusa===wanted):bloques;
-  return {title,url,cover,bloques,filtrados};
+  return {title,url,cover,bloques,filtrados:wanted?bloques.filter(b=>b.cusa===wanted):bloques};
 }
 async function buscarEnVivo(){
   const q=document.getElementById("q").value.trim();
   const nc=normCusa(q);
   const st=document.getElementById("liveStatus"), out=document.getElementById("out");
   if(!/^CUSA|^PLAS|^PCAS|^PLJM|^PCJS|^PPSA/i.test(nc)){
-    if(st) st.textContent="Para en vivo escribe un CUSA (ej. CUSA43772 o 43772).";
+    if(st) st.textContent="Escribe un CUSA para en vivo.";
     return;
   }
   try{
-    if(st) st.textContent="Buscando "+nc+" en dlpsgame…";
+    if(st) st.textContent="Buscando "+nc+"…";
     const sHtml=await fetchTextLive("https://dlpsgame.com/?s="+encodeURIComponent(nc));
     const sDoc=new DOMParser().parseFromString(sHtml,"text/html");
     const cands=[];
@@ -393,63 +340,41 @@ async function buscarEnVivo(){
       if(SKIP_HREF.some(s=>href.includes(s))) return;
       if(cands.length<3) cands.push({t:a.textContent.trim(),u:new URL(href,"https://dlpsgame.com").href});
     });
-    if(!cands.length){ if(st) st.textContent="Sin resultados en vivo para "+nc; out.innerHTML='<div class="card"><h2>Sin resultados en vivo para '+esc(nc)+'</h2></div>'; return; }
-    if(st) st.textContent="Ficha: "+cands[0].t+" — decodificando…";
+    if(!cands.length){ if(st) st.textContent="Sin resultados para "+nc; return; }
+    if(st) st.textContent="Cargando ficha…";
     const gHtml=await fetchTextLive(cands[0].u);
     const parsed=parseGameLive(gHtml,cands[0].u,nc);
     const show=parsed.filtrados.length?parsed.filtrados:parsed.bloques;
-    if(st) st.textContent="En vivo: "+parsed.title+" · "+show.length+" bloque(s) de "+nc+" (siempre actualizado)";
-    // mezcla con base local si existe para contexto
-    renderResults(show,nc+" (en vivo)");
+    if(st) st.textContent="";
+    renderResults(show,nc);
   }catch(e){
-    if(st) st.textContent="En vivo falló ("+e.message+"). Abre https://dlpsgame.com/?s="+nc+" en pestaña o usa: py verify_cusa.py --search "+nc;
+    if(st) st.textContent="Falló: "+e.message;
   }
 }
-
 async function init(){
-  const foot = document.getElementById("foot");
-  // Base sencilla: lista + enlace (siempre). Caché CUSA si existe (instantáneo).
+  const foot=document.getElementById("foot");
   try{
-    const rj = await fetch("data/juegos.min.json", {cache:"no-store"});
-    if(rj.ok) JUEGOS = await rj.json();
-    else throw new Error("sin min");
+    const rj=await fetch("data/juegos.min.json",{cache:"no-store"});
+    if(rj.ok) JUEGOS=await rj.json();
+    else throw 0;
   }catch(e){
-    try{
-      const rj2 = await fetch("data/juegos.json", {cache:"no-store"});
-      if(rj2.ok) JUEGOS = await rj2.json();
-    }catch(e2){}
+    try{ const r2=await fetch("data/juegos.json",{cache:"no-store"}); if(r2.ok) JUEGOS=await r2.json(); }catch(e2){}
   }
-  try{
-    const r = await fetch("data/cusa_idiomas.json", {cache:"no-store"});
-    if(r.ok) ROWS = await r.json();
-  }catch(e){}
-  BY_CUSA = new Map();
-  ROWS.forEach(r=>{
-    const k = (r.cusa||"").toUpperCase();
-    if(!k) return;
-    if(!BY_CUSA.has(k)) BY_CUSA.set(k,[]);
-    BY_CUSA.get(k).push(r);
-  });
+  try{ const r=await fetch("data/cusa_idiomas.json",{cache:"no-store"}); if(r.ok) ROWS=await r.json(); }catch(e){}
+  BY_CUSA=new Map();
+  ROWS.forEach(r=>{ const k=(r.cusa||"").toUpperCase(); if(!k) return; if(!BY_CUSA.has(k)) BY_CUSA.set(k,[]); BY_CUSA.get(k).push(r); });
   renderStats();
-  foot.textContent = "Lista: "+JUEGOS.length+" juegos · Caché: "+ROWS.length+" bloques / "+BY_CUSA.size+" CUSAs · Al entrar carga la ficha y filtra CUSA en vivo";
-  // precarga ejemplos rápidos
-  document.getElementById("out").innerHTML = '<div class="card"><h2>Cómo usar</h2><p class="small">Por nombre: escribe <code>mortuary</code> → <b>Ver idiomas</b> (carga la ficha y filtra CUSA). Por CUSA: escribe <code>CUSA43772</code> → <b>Consultar</b> (caché) o <b>En vivo</b> (ficha actual). Prueba: <a href="#CUSA43772" onclick="document.getElementById(\'q\').value=\'CUSA43772\';buscarEnVivo();return false">CUSA43772 en vivo</a></p></div>';
-  // si viene #CUSA en URL, busca directo
+  foot.textContent="Fuente: dlpsgame · en vivo";
+  document.getElementById("out").innerHTML='<div class="card"><h2>Empieza a buscar</h2><p class="mut">Ejemplo: CUSA43772 o “mortuary”.</p></div>';
   if(location.hash){
-    const h = decodeURIComponent(location.hash.slice(1));
-    if(h){
-      document.getElementById("q").value=h;
-      if(/^CUSA|^PLAS|^PCAS|^PLJM|^PCJS|^PPSA/i.test(normCusa(h))||/^\d{5}$/.test(h.trim())) buscarEnVivo();
-      else buscar();
-    }
+    const h=decodeURIComponent(location.hash.slice(1));
+    if(h){ document.getElementById("q").value=h; buscar(); }
   }
 }
-document.getElementById("go").onclick = buscar;
-document.getElementById("clear").onclick = ()=>{document.getElementById("q").value="";document.getElementById("liveStatus").textContent="";document.getElementById("out").innerHTML="";document.getElementById("q").focus();};
+document.getElementById("go").onclick=buscar;
+document.getElementById("clear").onclick=()=>{document.getElementById("q").value="";document.getElementById("liveStatus").textContent="";document.getElementById("out").innerHTML="";document.getElementById("q").focus();};
 document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="Enter")buscar();});
-window.buscar = buscar;
-window.buscarEnVivo = buscarEnVivo;
-window.verJuego = verJuego;
+window.buscar=buscar; window.buscarEnVivo=buscarEnVivo; window.verJuego=verJuego;
 init();
 </script>
 </body>
