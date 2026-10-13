@@ -191,12 +191,13 @@ const REGIONES = new Set(["EUR","USA","US","EU","PAL","NTSC","ASIA","AS","JPN","
 const VOICE_L = ["voice","voices","voise","voises","voi","vois","void","voids","audio","audios","dub","dubs","dubbed","doblaje","doblado","voz","voces","vocal","sound","speech"];
 const SCREEN_L = ["screen languages","screen language","screen","subtitles","subtitle","subs","sub","texts","text","text languages","written","languages","language","lenguages","lenguage","idiomas","idioma","langue","langues","menus","interface"];
 const ALL_L_RE = new RegExp("\\b("+[...VOICE_L,...SCREEN_L].sort((a,b)=>b.length-a.length).join("|")+")\\s*[:\uFF1A]\\s*","gi");
+const DEFAULT_WORKER = "https://late-sky-3721.kizeocloud1.workers.dev/";
 function workerBase(){
   try{
     const p = new URLSearchParams(location.search).get("worker");
     if(p){localStorage.setItem("cusa_worker",p);}
-    return localStorage.getItem("cusa_worker")||"";
-  }catch(e){return "";}
+    return localStorage.getItem("cusa_worker")||DEFAULT_WORKER;
+  }catch(e){return DEFAULT_WORKER;}
 }
 async function fetchTextLive(target){
   const st = document.getElementById("liveStatus");
