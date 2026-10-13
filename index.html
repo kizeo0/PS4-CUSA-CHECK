@@ -202,21 +202,21 @@ async function fetchTextLive(target){
   const st = document.getElementById("liveStatus");
   const wb = workerBase();
   const tries = [];
-  if(wb) tries.push(wb.replace(/\/$/,"")+"?url="+encodeURIComponent(target));
-  tries.push("https://api.allorigins.win/raw?url="+encodeURIComponent(target));
-  tries.push("https://corsproxy.io/?url="+encodeURIComponent(target));
+  if(wb) tries.push({n:"worker", u:wb.replace(/\/$/,"")+"?url="+encodeURIComponent(target)});
+  tries.push({n:"proxy1", u:"https://api.allorigins.win/raw?url="+encodeURIComponent(target)});
+  tries.push({n:"proxy2", u:"https://api.codetabs.com/v1/proxy?quest="+encodeURIComponent(target)});
   let err=null;
-  for(const u of tries){
+  for(const t of tries){
     try{
       if(st) st.textContent = "Consultando…";
-      const r = await fetch(u);
-      if(!r.ok) throw new Error("HTTP "+r.status);
-      const t = await r.text();
-      if(t && t.length>2000) return t;
-      throw new Error("vacía");
+      const r = await fetch(t.u);
+      if(!r.ok) throw new Error("HTTP "+r.status+" ("+t.n+")");
+      const txt = await r.text();
+      if(txt && txt.length>2000) return txt;
+      throw new Error("vacía ("+t.n+")");
     }catch(e){err=e;}
   }
-  throw err||new Error("proxy");
+  throw err||new Error("proxies bloqueados: configura tu worker (?worker=URL)");
 }
 function b64ToText(b64){
   b64=(""+b64).trim().replace(/\s+/g,"");
