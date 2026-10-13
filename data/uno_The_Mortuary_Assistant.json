@@ -1,0 +1,104 @@
+{
+ "page_url": "https://dlpsgame.com/the-mortuary-assistant-ps4-pkg/",
+ "game_title": "The Mortuary Assistant",
+ "cover": "https://dlpsgame.com/wp-content/uploads/2026/09/1-pou-1.jpg",
+ "ficha_tabla": {
+  "NAME": "The Mortuary Assistant",
+  "LANGUAGE": "Multi",
+  "RELEASE": "2024",
+  "GENRE": "Adventure"
+ },
+ "num_bloques": 3,
+ "cusas_unicos": [
+  "CUSA43772"
+ ],
+ "bloques": [
+  {
+   "indice": 1,
+   "cusa": "CUSA43772",
+   "region": "EUR",
+   "uploader": "(@Opoisso893/Golemnight)",
+   "header_text": "CUSA43772 – EUR (@Opoisso893/Golemnight)",
+   "voice": "English",
+   "screen_languages": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish",
+   "bloque_texto": "by Opoisso893/Golemnight\nCUSA43772 – EUR\nGame + Update 1.08 (Fix 5.05/6.72/7.xx/9.00/11.00) :\nAkia\n–\nRootz\n–\nData\n–\nViki\n–\nDith\n–\n1File\nPasword : [DLPSGAME.COM]\nVoice : English\nScreen Languages : Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish\nTnx to caesar for his donation​\n(\nGuide Download\n–\nTool Download\n)",
+   "etiquetas": [
+    {
+     "label": "Voice",
+     "kind": "voice",
+     "value": "English"
+    },
+    {
+     "label": "Screen Languages",
+     "kind": "screen",
+     "value": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish"
+    }
+   ],
+   "decoded_ok": true,
+   "has_spanish_any": true,
+   "has_spain": false,
+   "has_mexico_latino": true,
+   "spanish_in_voice": false,
+   "spanish_in_screen": true,
+   "spanish_resumen": "ES solo textos México"
+  },
+  {
+   "indice": 2,
+   "cusa": "CUSA43772",
+   "region": "EUR",
+   "uploader": "(@H3N7R1K Otakuboy)",
+   "header_text": "CUSA43772 – EUR (@H3N7R1K Otakuboy)",
+   "voice": "English",
+   "screen_languages": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish",
+   "bloque_texto": "by H3N7R1K Otakuboy\nCUSA43772 – EUR\nGame (v1.08) (12.00+) :\nAkia\n–\nRootz\n–\nData\n–\nViki\n–\n1File\n–\nDith\nVoice : English\nScreen Languages : Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish\n(\nGuide Download\n–\nTool Download\n)",
+   "etiquetas": [
+    {
+     "label": "Voice",
+     "kind": "voice",
+     "value": "English"
+    },
+    {
+     "label": "Screen Languages",
+     "kind": "screen",
+     "value": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish"
+    }
+   ],
+   "decoded_ok": true,
+   "has_spanish_any": true,
+   "has_spain": false,
+   "has_mexico_latino": true,
+   "spanish_in_voice": false,
+   "spanish_in_screen": true,
+   "spanish_resumen": "ES solo textos México"
+  },
+  {
+   "indice": 3,
+   "cusa": "CUSA43772",
+   "region": "EUR",
+   "uploader": "(@ Oxeres )",
+   "header_text": "CUSA43772 – EUR (@ Oxeres )",
+   "voice": "English",
+   "screen_languages": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish",
+   "bloque_texto": "by\nOxeres\nCUSA43772 – EUR\nGame (v1.08) (9.00+) :\nAkia\n–\nRootz\n–\nData\n–\nViki\n–\nDith\nVoice : English\nScreen Languages : Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish\n(\nGuide Download\n–\nTool Download\n)",
+   "etiquetas": [
+    {
+     "label": "Voice",
+     "kind": "voice",
+     "value": "English"
+    },
+    {
+     "label": "Screen Languages",
+     "kind": "screen",
+     "value": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish"
+    }
+   ],
+   "decoded_ok": true,
+   "has_spanish_any": true,
+   "has_spain": false,
+   "has_mexico_latino": true,
+   "spanish_in_voice": false,
+   "spanish_in_screen": true,
+   "spanish_resumen": "ES solo textos México"
+  }
+ ]
+}

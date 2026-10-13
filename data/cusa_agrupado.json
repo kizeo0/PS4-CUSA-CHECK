@@ -1,0 +1,154 @@
+{
+ "CUSA00605": {
+  "cusa": "CUSA00605",
+  "region": "EUR",
+  "juegos": [
+   "Assassins Creed Unity"
+  ],
+  "urls": [
+   "https://dlpsgame.com/assassins-creed-unity-free-ps4-pkg/"
+  ],
+  "num_variantes": 1,
+  "variantes": [
+   {
+    "voice": "German, English, Italian, French, Spanish",
+    "screen": "German, Korean, Traditional Chinese, English, Italian, French, Polish, Spanish, Dutch",
+    "es_resumen": "ES doblaje (variante sin especificar)",
+    "es_any": true,
+    "es_spain": false,
+    "es_mexico": false,
+    "es_en_voz": true,
+    "es_en_textos": true,
+    "uploaders": [
+     "(v1.05)",
+     "(v1.05)(PS4/PS5)"
+    ],
+    "ejemplos": [
+     "https://dlpsgame.com/assassins-creed-unity-free-ps4-pkg/"
+    ]
+   }
+  ]
+ },
+ "CUSA00663": {
+  "cusa": "CUSA00663",
+  "region": "USA",
+  "juegos": [
+   "Assassins Creed Unity"
+  ],
+  "urls": [
+   "https://dlpsgame.com/assassins-creed-unity-free-ps4-pkg/"
+  ],
+  "num_variantes": 2,
+  "variantes": [
+   {
+    "voice": "",
+    "screen": "English, French, Portuguese (Brazilian), Spanish (Mexican)",
+    "es_resumen": "ES solo textos (variante sin especificar)",
+    "es_any": true,
+    "es_spain": false,
+    "es_mexico": false,
+    "es_en_voz": false,
+    "es_en_textos": true,
+    "uploaders": [
+     "(v1.05)",
+     "(v1.06)"
+    ],
+    "ejemplos": [
+     "https://dlpsgame.com/assassins-creed-unity-free-ps4-pkg/"
+    ]
+   },
+   {
+    "voice": "",
+    "screen": "Latin American Spanish",
+    "es_resumen": "ES solo textos (variante sin especificar)",
+    "es_any": true,
+    "es_spain": false,
+    "es_mexico": true,
+    "es_en_voz": false,
+    "es_en_textos": true,
+    "uploaders": [
+     "(v1.05)(Latin American Spanish)"
+    ],
+    "ejemplos": [
+     "https://dlpsgame.com/assassins-creed-unity-free-ps4-pkg/"
+    ]
+   }
+  ]
+ },
+ "CUSA10812": {
+  "cusa": "CUSA10812",
+  "region": "EUR",
+  "juegos": [
+   "A Plague Tale Innocence"
+  ],
+  "urls": [
+   "https://dlpsgame.com/a-plague-tale-innocence-ps4-pkg/"
+  ],
+  "num_variantes": 2,
+  "variantes": [
+   {
+    "voice": "German , English, French",
+    "screen": "German, Russian, Korean, Traditional Chinese, English, Italian, Portuguese (Brazil), French, Polish, Simplified Chinese, Spanish",
+    "es_resumen": "ES solo textos (variante sin especificar)",
+    "es_any": true,
+    "es_spain": false,
+    "es_mexico": false,
+    "es_en_voz": false,
+    "es_en_textos": true,
+    "uploaders": [
+     "(v1.06)",
+     "(v1.09)(@Autior)",
+     "(v1.09)(@FantasmaXDS)"
+    ],
+    "ejemplos": [
+     "https://dlpsgame.com/a-plague-tale-innocence-ps4-pkg/"
+    ]
+   },
+   {
+    "voice": "German, English, French",
+    "screen": "German, Russian, Korean, Traditional Chinese, English, Italian, Portuguese (Brazil), French, Polish, Simplified Chinese, Spanish",
+    "es_resumen": "ES solo textos (variante sin especificar)",
+    "es_any": true,
+    "es_spain": false,
+    "es_mexico": false,
+    "es_en_voz": false,
+    "es_en_textos": true,
+    "uploaders": [],
+    "ejemplos": [
+     "https://dlpsgame.com/a-plague-tale-innocence-ps4-pkg/"
+    ]
+   }
+  ]
+ },
+ "CUSA43772": {
+  "cusa": "CUSA43772",
+  "region": "EUR",
+  "juegos": [
+   "The Mortuary Assistant"
+  ],
+  "urls": [
+   "https://dlpsgame.com/the-mortuary-assistant-ps4-pkg/"
+  ],
+  "num_variantes": 1,
+  "variantes": [
+   {
+    "voice": "English",
+    "screen": "Chinese (Simplified), English, French (France), German, Italian, Japanese, Korean, Portuguese (Brazil), Spanish (Mexico), Turkish",
+    "es_resumen": "ES solo textos México",
+    "es_any": true,
+    "es_spain": false,
+    "es_mexico": true,
+    "es_en_voz": false,
+    "es_en_textos": true,
+    "uploaders": [
+     "(@ Oxeres )",
+     "(@H3N7R1K Otakuboy)",
+     "(@Opoisso893/Golemnight)"
+    ],
+    "ejemplos": [
+     "https://dlpsgame.com/the-mortuary-assistant-ps4-pkg/"
+    ]
+   }
+  ]
+ }
+}
