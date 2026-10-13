@@ -72,7 +72,7 @@ footer{margin-top:18px;color:#5c6f61;font-size:.78rem;text-align:center}
 <main class="wrap">
 <div class="search">
 <div class="row">
-<input id="q" type="text" placeholder="CUSA43772 · 43772 · Mortuary" autocomplete="off" spellcheck="false" enterkeyhint="search">
+<input id="q" type="text" placeholder="CUSAXXXX O NOMBRE DEL JUEGO" autocomplete="off" spellcheck="false" enterkeyhint="search">
 <button id="go">Consultar</button>
 <button id="clear" class="ghost">Limpiar</button>
 </div>
@@ -366,7 +366,7 @@ async function init(){
   ROWS.forEach(r=>{ const k=(r.cusa||"").toUpperCase(); if(!k) return; if(!BY_CUSA.has(k)) BY_CUSA.set(k,[]); BY_CUSA.get(k).push(r); });
   renderStats();
   foot.textContent="Consulta en vivo";
-  document.getElementById("out").innerHTML='<div class="card"><h2>Empieza a buscar</h2><p class="mut">Ejemplo: CUSA43772 o “mortuary”.</p></div>';
+  document.getElementById("out").innerHTML='<div class="card"><h2>Empieza a buscar</h2><p class="mut">Escribe un CUSA o el nombre del juego.</p></div>';
   if(location.hash){
     const h=decodeURIComponent(location.hash.slice(1));
     if(h){ document.getElementById("q").value=h; buscar(); }
